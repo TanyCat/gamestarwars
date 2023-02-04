@@ -94,21 +94,38 @@ body {
 }
 
 .arrow_top {
+  height: 96px;
   position: absolute;
-  height: auto;
   bottom: 50px;
   left: 20px;
   transform: rotate(-90deg);
-  width: clamp(64px, 20%, 100px);
+  width: 96px;
+  background: url(./img/arrow.png);
+  background-size: cover;
+
 }
 
 .arrow_right {
   position: absolute;
-  width: clamp(64px, 20%, 100px);
-  height: auto;
+  width: 96px;
+  height: 96px;
   right: 30px;
   bottom: 50px;
   transform: rotate(90deg);
+  background: url(./img/arrow.png);
+  background-size: cover;
+}
+
+@media (max-width: 800px) 
+{
+  .arrow_right {
+    width: 90px; 
+    height:90px;
+  }
+  .arrow_top {
+    width: 90px; 
+    height:90px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -149,7 +166,7 @@ body {
 }
 
 .window_start {
-  background-color: rgb(233, 191, 101);
+  background-color: rgb(43, 255, 237);
   color: black;
   border: 1px solid rgb(248, 248, 251);
   border-radius: 10px;
@@ -171,8 +188,10 @@ body {
   font-size: 2rem;
 }
 .window_start__button{
-  width: 30vw;
-  height: 2rem;
-  background-color: red;
-  margin: 0 auto;
+  width: 40vw;
+  height: 4rem;
+  background-color: rgb(0, 26, 255);
+  position: absolute;
+    bottom: 10px;
+    left: 20%;
  }

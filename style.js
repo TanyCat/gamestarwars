@@ -28,7 +28,7 @@ shotButton.addEventListener("touchstart", (event) => shot(event));
 // функция обеспечивающая старт игры и задания ВСЕХ переменных
 function initial() {
   hits = 0;
-  ammunition = 15;
+  ammunition = 1;
   maxWidth = document.documentElement.clientWidth - 150;
   rightSquare = maxWidth / 2;
   squareOur.style.left = `${rightSquare}px`;
