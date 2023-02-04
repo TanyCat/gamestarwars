@@ -100,7 +100,7 @@ body {
   left: 20px;
   transform: rotate(-90deg);
   width: 96px;
-  background: url(./img/arrow.png);
+  background: url('./img/arrow.png');
   background-size: cover;
 
 }
@@ -112,7 +112,7 @@ body {
   right: 30px;
   bottom: 50px;
   transform: rotate(90deg);
-  background: url(./img/arrow.png);
+  background: url('./img/arrow.png');
   background-size: cover;
 }
 
@@ -146,7 +146,7 @@ body {
   right: calc(55% - 40px);
   bottom: 50px;
   position: absolute;
- background-image: url(./img/fire.png);
+ background-image: url('./img/fire.png');
  background-size: cover;
 }
 
@@ -166,7 +166,7 @@ body {
 }
 
 .window_start {
-  background-color: rgb(178, 247, 241);
+  background-color: rgb(202, 255, 250);
   color: black;
   border: 1px solid rgb(248, 248, 251);
   border-radius: 10px;
@@ -190,8 +190,18 @@ body {
 .window_start__button{
   width: 40vw;
   height: 4rem;
-  background-color: rgb(0, 26, 255);
+  background-color: rgb(1, 15, 137);
   position: absolute;
     bottom: 10px;
     left: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+ 
+ }
+
+ .window_start__button__Text{
+  background-color: white;
+   opacity: 1;
  }
