@@ -61,6 +61,12 @@ body {
 
 }
 
+.special_effects{
+  position: absolute;
+  width: 10vh;
+  height: 10vh;
+}
+
 .starship {
   width: 150px;
   position: absolute;

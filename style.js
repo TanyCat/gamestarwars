@@ -10,6 +10,7 @@ let elem = document.getElementById("elem");
 const gameOver = document.querySelector(".window_start");
 const gameStart = document.querySelector(".window_start__button");
 const targetElement = document.querySelector(".target");
+const specialEffectsElement = document.querySelector(".special_effects");
 let rightSquare = maxWidth / 2;
 let targetCoordinatesNow = { x: 0, y: 0 };
 let hits = "";
@@ -145,4 +146,20 @@ function ShowAmmunition() {
 function HITS() {
   hits = hits + 1;
   elem.innerHTML = hits;
+  specialEffects()
+}
+
+function specialEffects() {
+  targetElement.classList.add('hideWindows')
+  specialEffectsElement.classList.remove('hideWindows')
+ 
+  specialEffectsElement.style.left = `${targetCoordinatesNow.x}px`;
+  specialEffectsElement.style.top = `${targetCoordinatesNow.y}px`;
+
+  setTimeout(
+    ()=>{
+      targetElement.classList.remove('hideWindows')
+      specialEffectsElement.classList.add('hideWindows')
+    },TIMERINTERVAL
+  )
 }
