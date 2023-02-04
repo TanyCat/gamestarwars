@@ -171,7 +171,7 @@ body {
   border: 1px solid rgb(248, 248, 251);
   border-radius: 10px;
   width: 60vw;
-  height: 40vh;
+  height: 30vh;
   position: absolute;
   top: 25%;
   left: 20%;
@@ -192,7 +192,6 @@ body {
   height: 4rem;
   background-color: rgb(1, 15, 137);
   position: absolute;
-    bottom: 10px;
     left: 20%;
     display: flex;
     justify-content: center;
@@ -202,6 +201,6 @@ body {
  }
 
  .window_start__button__Text{
-  background-color: white;
+ color: white;
    opacity: 1;
  }
