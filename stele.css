@@ -1,6 +1,7 @@
 body {
   overflow: hidden;
   margin: 0;
+  font-family: "Rajdhani", sans-serif;
 }
 .wrapperBodyes {
   background: url(./img/kosmicheskoe.jpg);
@@ -9,42 +10,63 @@ body {
 }
 
 .top_games {
-  /* height: 12vh; */
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
 }
 
 .cartridges {
-  width: 12vh;
-  height: 6vh;
+  width: 6vh;
+  height: 3vh;
   background-color: rgb(232, 241, 238);
-  /* position: absolute;
-  left: 35%; */
-  border: 5px black solid;
- display: flex;
- justify-content: center;
- align-items: center;
- font-size: 2rem;
-}
-
-.glasses {
-  width: 10vh;
-  height: 6vh;
-  background-color: rgb(232, 241, 238);
-  /* position: relative;
-  left: 50%; */
   border: 5px black solid;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1rem;
+  border-radius: 14px;
+}
+
+.wrapper_glasses {
+  display: flex;
+  background-color: rgb(232, 241, 238);
+  border: 5px black solid;
+  font-size: 1rem;
+  border-radius: 14px;
+}
+
+.glasses {
+  width: 3vh;
+  height: 3vh;
+  border-right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper_glasses__step {
+  width: 8vh;
+  height: 3vh;
+  border-left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glasses_step {
+  width: 1vh;
+  height: 1.5vh;
+  border-radius: 5px;
+}
+
+.glasses_step__color {
+  background-color: rgb(61, 127, 3);
+  margin-left: 1px;
 }
 
 .middle_games {
   height: 55vh;
-    position: relative;
-    /* border: 1px solid red; */
-    width: 100vw;
+  position: relative;
+  width: 100vw;
 }
 
 .control_game {
@@ -58,10 +80,9 @@ body {
   height: 10vh;
   position: absolute;
   transition: all 0.8s;
-
 }
 
-.special_effects{
+.special_effects {
   position: absolute;
   width: 10vh;
   height: 10vh;
@@ -71,8 +92,7 @@ body {
   width: 150px;
   position: absolute;
   top: 1px;
-    left: 1px;
-
+  left: 1px;
 }
 
 .sword {
@@ -82,12 +102,10 @@ body {
   position: absolute;
   top: 1px;
   left: 61px;
-  transition: top 0.10s;
+  transition: top 0.1s;
 }
 
-
 .weapon {
-  /* width: 150px; */
   position: absolute;
   left: 1px;
   top: 55vh;
@@ -100,9 +118,8 @@ body {
   left: 20px;
   transform: rotate(-90deg);
   width: 96px;
-  background: url('./img/arrow.png');
+  background: url("./img/arrow.png");
   background-size: cover;
-
 }
 
 .arrow_right {
@@ -112,19 +129,18 @@ body {
   right: 30px;
   bottom: 50px;
   transform: rotate(90deg);
-  background: url('./img/arrow.png');
+  background: url("./img/arrow.png");
   background-size: cover;
 }
 
-@media (max-width: 800px) 
-{
+@media (max-width: 800px) {
   .arrow_right {
-    width: 90px; 
-    height:90px;
+    width: 90px;
+    height: 90px;
   }
   .arrow_top {
-    width: 90px; 
-    height:90px;
+    width: 90px;
+    height: 90px;
   }
 }
 
@@ -137,8 +153,6 @@ body {
   }
 }
 
-
-
 .fire_button {
   transition: all 0.5s ease-out;
   width: 60px;
@@ -146,8 +160,8 @@ body {
   right: calc(55% - 40px);
   bottom: 50px;
   position: absolute;
- background-image: url('./img/fire.png');
- background-size: cover;
+  background-image: url("./img/fire.png");
+  background-size: cover;
 }
 
 @media (min-width: 606px) {
@@ -181,26 +195,26 @@ body {
   display: none;
 }
 
-.window_start__title{
+.window_start__title {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
 }
-.window_start__button{
+.window_start__button {
   width: 40vw;
   height: 4rem;
   background-color: rgb(1, 15, 137);
   position: absolute;
-    left: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
- 
- }
+  left: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  border-radius: 10px;
+}
 
- .window_start__button__Text{
- color: white;
-   opacity: 1;
- }
+.window_start__button__Text {
+  color: white;
+  opacity: 1;
+}

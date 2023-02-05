@@ -11,6 +11,7 @@ const gameOver = document.querySelector(".window_start");
 const gameStart = document.querySelector(".window_start__button");
 const targetElement = document.querySelector(".target");
 const specialEffectsElement = document.querySelector(".special_effects");
+const recharge = document.querySelector(".wrapper_glasses__step");
 let rightSquare = maxWidth / 2;
 let targetCoordinatesNow = { x: 0, y: 0 };
 let hits = "";
@@ -25,7 +26,6 @@ keyLeft.addEventListener("touchstart", (event) => goToLeft(event));
 keyRight.addEventListener("touchstart", (event) => goToRight(event));
 shotButton.addEventListener("touchstart", (event) => shot(event));
 
-// функция обеспечивающая старт игры и задания ВСЕХ переменных
 function initial() {
   hits = 0;
   ammunition = 15;
@@ -35,7 +35,8 @@ function initial() {
   ammunitionElement.innerHTML = ammunition;
   elem.innerHTML = hits;
   gameOver.classList.add("hideWindows");
-  targetElement.classList.remove('hideWindows')
+  targetElement.classList.remove("hideWindows");
+  rechargeStep()
 }
 
 initial();
@@ -104,7 +105,7 @@ function moveShot() {
 
 function shot() {
   if (ammunition <= 0) {
-    targetElement.classList.add('hideWindows')
+    targetElement.classList.add("hideWindows");
     gameOver.classList.remove("hideWindows");
     return;
   }
@@ -136,6 +137,7 @@ function shot() {
     swordCoordinates.style.top = `0px`;
   }, TIMERINTERVAL);
   ShowAmmunition();
+  rechargeStep()
 }
 
 function ShowAmmunition() {
@@ -146,20 +148,29 @@ function ShowAmmunition() {
 function HITS() {
   hits = hits + 1;
   elem.innerHTML = hits;
-  specialEffects()
+  specialEffects();
 }
 
 function specialEffects() {
-  targetElement.classList.add('hideWindows')
-  specialEffectsElement.classList.remove('hideWindows')
- 
+  targetElement.classList.add("hideWindows");
+  specialEffectsElement.classList.remove("hideWindows");
+
   specialEffectsElement.style.left = `${targetCoordinatesNow.x}px`;
   specialEffectsElement.style.top = `${targetCoordinatesNow.y}px`;
 
-  setTimeout(
-    ()=>{
-      targetElement.classList.remove('hideWindows')
-      specialEffectsElement.classList.add('hideWindows')
-    },TIMERINTERVAL
-  )
+  setTimeout(() => {
+    targetElement.classList.remove("hideWindows");
+    specialEffectsElement.classList.add("hideWindows");
+  }, TIMERINTERVAL);
+}
+
+function rechargeStep() {
+  const divInner = '<div class="glasses_step glasses_step__color"></div>';
+  let result = "";
+  for (let i = 1; i < 7; i++) {
+    setTimeout(() => {
+      result = result + divInner;
+      recharge.innerHTML = result;
+    }, i * 100);
+  }
 }

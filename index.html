@@ -6,12 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game StarWars</title>
     <link rel="stylesheet" href="stele.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="wrapperBodyes">
       <div class="top_games line-class">
         <div id="elem" class="cartridges"></div>
-        <div class="glasses"></div>
+        <div class="wrapper_glasses">
+          <div class="glasses"></div>
+          <div class="wrapper_glasses__step">
+          </div>
+        </div>
       </div>
 
       <div class="middle_games">
@@ -42,7 +52,6 @@
           <div class="arrow_wraper">
             <div class="arrow_top"></div>
             <div class="arrow_right"></div>
-      
           </div>
           <div class="fire_button" oncontextmenu="return false;"></div>
         </div>
@@ -50,7 +59,9 @@
 
       <div class="window_start hideWindows">
         <p class="window_start__title">Game Over</p>
-        <div class="window_start__button"> <p class="window_start__button__Text">START</p> </div>
+        <div class="window_start__button">
+          <p class="window_start__button__Text">START</p>
+        </div>
       </div>
     </div>
     <script src="./style.js"></script>
