@@ -17,6 +17,7 @@ let targetCoordinatesNow = { x: 0, y: 0 };
 let hits = "";
 let ammunition = "";
 let blockShot = false;
+let stepByStep = 10;
 
 const TIMERINTERVAL = 1000;
 
@@ -36,14 +37,17 @@ function initial() {
   elem.innerHTML = hits;
   gameOver.classList.add("hideWindows");
   targetElement.classList.remove("hideWindows");
-  rechargeStep()
+  rechargeStep();
+  if (document.documentElement.clientWidth > 1024) {
+    stepByStep = 20;
+  }
 }
 
 initial();
 
 function goToLeft() {
   if (rightSquare > 0) {
-    rightSquare = rightSquare - 10;
+    rightSquare = rightSquare - stepByStep;
   } else {
     rightSquare = rightSquare;
   }
@@ -54,7 +58,7 @@ function goToRight() {
   if (rightSquare > maxWidth) {
     rightSquare = rightSquare;
   } else {
-    rightSquare = rightSquare + 10;
+    rightSquare = rightSquare + stepByStep;
   }
   squareOur.style.left = `${rightSquare}px`;
 }
@@ -137,7 +141,7 @@ function shot() {
     swordCoordinates.style.top = `0px`;
   }, TIMERINTERVAL);
   ShowAmmunition();
-  rechargeStep()
+  rechargeStep();
 }
 
 function ShowAmmunition() {
