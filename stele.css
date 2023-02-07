@@ -218,3 +218,16 @@ body {
   color: white;
   opacity: 1;
 }
+
+.victory_game{
+  background-color: rgb(202, 255, 250);
+  color: black;
+  border: 1px solid rgb(248, 248, 251);
+  border-radius: 10px;
+  width: 60vw;
+  height: 30vh;
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  opacity: 0.8;
+}

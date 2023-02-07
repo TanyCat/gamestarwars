@@ -8,20 +8,26 @@ const swordCoordinates = document.querySelector(".sword");
 const ammunitionElement = document.querySelector(".glasses");
 let elem = document.getElementById("elem");
 const gameOver = document.querySelector(".window_start");
-const gameStart = document.querySelector(".window_start__button");
+const gameStart = document.querySelectorAll(".window_start__button");
 const targetElement = document.querySelector(".target");
 const specialEffectsElement = document.querySelector(".special_effects");
 const recharge = document.querySelector(".wrapper_glasses__step");
+const victoryGameElement = document.querySelector(".victory_game");
 let rightSquare = maxWidth / 2;
 let targetCoordinatesNow = { x: 0, y: 0 };
 let hits = "";
 let ammunition = "";
+let ammunitionStart = "";
 let blockShot = false;
 let stepByStep = 10;
 
 const TIMERINTERVAL = 1000;
 
-gameStart.addEventListener("touchstart", (event) => initial(event));
+console.log(gameStart);
+
+gameStart.forEach( (element) =>element.addEventListener("touchstart", (event) => initial(event)));
+
+// gameStart.addEventListener("touchstart", (event) => initial(event));
 document.addEventListener("keydown", (event) => moveSquare(event));
 keyLeft.addEventListener("touchstart", (event) => goToLeft(event));
 keyRight.addEventListener("touchstart", (event) => goToRight(event));
@@ -29,7 +35,8 @@ shotButton.addEventListener("touchstart", (event) => shot(event));
 
 function initial() {
   hits = 0;
-  ammunition = 15;
+  ammunition = 3;
+  ammunitionStart = ammunition;
   maxWidth = document.documentElement.clientWidth - 150;
   rightSquare = maxWidth / 2;
   squareOur.style.left = `${rightSquare}px`;
@@ -37,6 +44,7 @@ function initial() {
   elem.innerHTML = hits;
   gameOver.classList.add("hideWindows");
   targetElement.classList.remove("hideWindows");
+  victoryGameElement.classList.add("hideWindows");
   rechargeStep();
   if (document.documentElement.clientWidth > 1024) {
     stepByStep = 20;
@@ -108,11 +116,16 @@ function moveShot() {
 }
 
 function shot() {
+  if (hits>=ammunitionStart) {
+    winner()
+    return;
+  }
   if (ammunition <= 0) {
     targetElement.classList.add("hideWindows");
     gameOver.classList.remove("hideWindows");
     return;
   }
+ 
 
   if (blockShot) {
     return;
@@ -177,4 +190,9 @@ function rechargeStep() {
       recharge.innerHTML = result;
     }, i * 100);
   }
+}
+
+function winner() {
+    targetElement.classList.add("hideWindows");
+    victoryGameElement.classList.remove("hideWindows");
 }
