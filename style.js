@@ -35,7 +35,7 @@ shotButton.addEventListener("touchstart", (event) => shot(event));
 
 function initial() {
   hits = 0;
-  ammunition = 3;
+  ammunition = 15;
   ammunitionStart = ammunition;
   maxWidth = document.documentElement.clientWidth - 150;
   rightSquare = maxWidth / 2;
