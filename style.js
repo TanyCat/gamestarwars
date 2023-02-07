@@ -23,11 +23,8 @@ let stepByStep = 10;
 
 const TIMERINTERVAL = 1000;
 
-console.log(gameStart);
-
 gameStart.forEach( (element) =>element.addEventListener("touchstart", (event) => initial(event)));
 
-// gameStart.addEventListener("touchstart", (event) => initial(event));
 document.addEventListener("keydown", (event) => moveSquare(event));
 keyLeft.addEventListener("touchstart", (event) => goToLeft(event));
 keyRight.addEventListener("touchstart", (event) => goToRight(event));
