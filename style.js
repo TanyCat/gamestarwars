@@ -13,6 +13,13 @@ const targetElement = document.querySelector(".target");
 const specialEffectsElement = document.querySelector(".special_effects");
 const recharge = document.querySelector(".wrapper_glasses__step");
 const victoryGameElement = document.querySelector(".victory_game");
+const backgroundLevelTwo = document.querySelector(".wrapperBodyes");
+const transitionLevels = document.querySelector(".starship");
+const VictoryElement = document.querySelector(".victory");
+const victoryButtonElement = document.querySelector(".window_victory__button");
+const weaponNextLevelElement = document.querySelector(".weapon_nextLevel");
+
+
 let rightSquare = maxWidth / 2;
 let targetCoordinatesNow = { x: 0, y: 0 };
 let hits = "";
@@ -20,10 +27,16 @@ let ammunition = "";
 let ammunitionStart = "";
 let blockShot = false;
 let stepByStep = 10;
+let victoryRound = 1;
+const LEVEL_TWO_ammunition = 24;
 
 const TIMERINTERVAL = 1000;
 
-gameStart.forEach( (element) =>element.addEventListener("touchstart", (event) => initial(event)));
+gameStart.forEach((element) =>
+  element.addEventListener("touchstart", (event) => initial(event))
+);
+
+victoryButtonElement.addEventListener("touchstart", (event) => roundTwo(event));
 
 document.addEventListener("keydown", (event) => moveSquare(event));
 keyLeft.addEventListener("touchstart", (event) => goToLeft(event));
@@ -113,8 +126,8 @@ function moveShot() {
 }
 
 function shot() {
-  if (hits>=ammunitionStart) {
-    winner()
+  if (hits >= ammunitionStart) {
+    winner();
     return;
   }
   if (ammunition <= 0) {
@@ -122,7 +135,6 @@ function shot() {
     gameOver.classList.remove("hideWindows");
     return;
   }
- 
 
   if (blockShot) {
     return;
@@ -189,7 +201,43 @@ function rechargeStep() {
   }
 }
 
+function backgroundTwo() {
+  backgroundLevelTwo.classList.add("wrapperBodyesLeveltwo");
+}
+
+function roundTwo() {
+  elem.innerHTML = 0;
+  backgroundTwo();
+  weaponLevelTwo();
+  targetRaoundTwo();
+  weaponNextLevel();
+  SwordNextLevel();
+  victoryGameElement.classList.add("hideWindows");
+  transitionLevels.classList.add("starship_levelTwo");
+  swordCoordinates.classList.add("sword_levelTwo");
+}
+
 function winner() {
-    targetElement.classList.add("hideWindows");
-    victoryGameElement.classList.remove("hideWindows");
+  targetElement.classList.add("hideWindows");
+  victoryGameElement.classList.remove("hideWindows");
+  victoryRound++;
+}
+
+function weaponLevelTwo() {
+  ammunition = LEVEL_TWO_ammunition;
+  ammunitionElement.innerHTML = ammunition;
+  ammunitionStart = ammunition;
+  targetElement.classList.remove("hideWindows");
+}
+
+function targetRaoundTwo() {
+  VictoryElement.setAttribute("src", "./img/targetbollLevelTwo.png");
+}
+
+function weaponNextLevel() {
+  weaponNextLevelElement.setAttribute("src", "./img/puchka.png");
+}
+
+function SwordNextLevel() {
+  swordCoordinates.setAttribute("src", "./img/boll.png");
 }
