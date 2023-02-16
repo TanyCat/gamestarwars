@@ -55,10 +55,16 @@ function initial() {
   gameOver.classList.add("hideWindows");
   targetElement.classList.remove("hideWindows");
   victoryGameElement.classList.add("hideWindows");
+  backgroundLevelTwo.classList.remove("wrapperBodyesLeveltwo");
+  transitionLevels.classList.remove("starship_levelTwo");
+  swordCoordinates.classList.remove("sword_levelTwo");
   rechargeStep();
   if (document.documentElement.clientWidth > 1024) {
     stepByStep = 20;
   }
+  setTarget("./img/d5paauw.png");
+  weaponNextLevel("./img/png-clipart-star-wstarfighter-game.png")
+  SwordNextLevel("./img/sword.png")
 }
 
 initial();
@@ -209,9 +215,9 @@ function roundTwo() {
   elem.innerHTML = 0;
   backgroundTwo();
   weaponLevelTwo();
-  targetRaoundTwo();
-  weaponNextLevel();
-  SwordNextLevel();
+  setTarget("./img/targetbollLevelTwo.png");
+  weaponNextLevel("./img/puchka.png");
+  SwordNextLevel("./img/boll.png");
   victoryGameElement.classList.add("hideWindows");
   transitionLevels.classList.add("starship_levelTwo");
   swordCoordinates.classList.add("sword_levelTwo");
@@ -230,14 +236,18 @@ function weaponLevelTwo() {
   targetElement.classList.remove("hideWindows");
 }
 
-function targetRaoundTwo() {
-  VictoryElement.setAttribute("src", "./img/targetbollLevelTwo.png");
+// function targetRaoundTwo() {
+//   VictoryElement.setAttribute("src", "./img/targetbollLevelTwo.png");
+// }
+
+function setTarget(url) {
+  VictoryElement.setAttribute("src", url);
 }
 
-function weaponNextLevel() {
-  weaponNextLevelElement.setAttribute("src", "./img/puchka.png");
+function weaponNextLevel(url) {
+  weaponNextLevelElement.setAttribute("src", url);
 }
 
-function SwordNextLevel() {
-  swordCoordinates.setAttribute("src", "./img/boll.png");
+function SwordNextLevel(url) {
+  swordCoordinates.setAttribute("src", url);
 }
